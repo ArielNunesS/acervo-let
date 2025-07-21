@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #66789f;
+  --card: #1a1a1d;
+  --border: #3c3c3c;
+  --primary: #3498db;
+  --text: #f0f0f0;
+  --secondary: #aaaaaa;
+}
+
+
+body {
+  background: var(--background)
+}
