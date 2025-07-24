@@ -14,8 +14,8 @@ export default function BookCard({ title, price, author, description, images }) 
 
     return (
         <div className="flex flex-col items-center gap-4">
-            <div className="relative text-center">
-            <h2 className="font-bold text-3xl text-[#64B5F6] py-0 mt-10 rounded-md w-full">{title}</h2>
+            <div className="relative w-70 items-center text-center">
+            <h2 className="font-bold text-2xl wrap-normal text-[#64B5F6] py-0 mt-10 rounded-md">{title}</h2>
             <p className="px-3 mb-2 text-sm rounded-md w-full">- {author}</p>
 
                 <img
@@ -26,7 +26,9 @@ export default function BookCard({ title, price, author, description, images }) 
 
                 <button
                     onClick={next}
-                    className="absolute mt-2 right-27 text-xs text-secondary active:opacity-60"
+                    className={`absolute mt-2 right-27 text-xs text-secondary ${
+                        images.length === 1 ? "opacity-50" : "opacity-100 active:opacity-60"
+                    }`}
                     >
                     
                     <img src="https://img.icons8.com/?size=20&id=79025&format=png&color=ffffff" />
@@ -35,7 +37,9 @@ export default function BookCard({ title, price, author, description, images }) 
 
                 <button
                     onClick={previous}
-                    className="absolute mt-2 left-27 text-xs text-secondary active:opacity-60"
+                    className={`absolute mt-2 left-27 text-xs text-secondary ${
+                        images.length === 1 ? "opacity-50" : "opacity-100 active:opacity-60"
+                    }`}
                     >
                     
                     <img src="https://img.icons8.com/?size=20&id=79026&format=png&color=ffffff" />
