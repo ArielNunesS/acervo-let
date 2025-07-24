@@ -4,12 +4,19 @@ export default function BookCard({ title, price, author, description, images }) 
     const [ index, setIndex ] = useState(0);
 
     const next = () => setIndex((index + 1) % images.length)
+    const previous = () => {
+        if(index === 0) {
+        setIndex(images.length - 1)
+        } else {
+            setIndex(index - 1)
+        }
+    }
 
     return (
         <div className="flex flex-col items-center gap-4">
             <div className="relative text-center">
-            <h2 className="font-bold text-xl  px-3 py-2 rounded-md w-full">{title}</h2>
-            <p className="px-3 mb-3 text-sm rounded-md w-full">- {author}</p>
+            <h2 className="font-bold text-3xl text-[#64B5F6] py-0 mt-10 rounded-md w-full">{title}</h2>
+            <p className="px-3 mb-2 text-sm rounded-md w-full">- {author}</p>
 
                 <img
                 src={images[index]}
@@ -19,9 +26,20 @@ export default function BookCard({ title, price, author, description, images }) 
 
                 <button
                     onClick={next}
-                    className="absolute mt-2 left-1/2 -translate-x-1/2 text-xs text-secondary"
+                    className="absolute mt-2 right-27 text-xs text-secondary active:opacity-60"
                     >
-                        Próxima Imagem
+                    
+                    <img src="https://img.icons8.com/?size=20&id=79025&format=png&color=ffffff" />
+
+                </button>
+
+                <button
+                    onClick={previous}
+                    className="absolute mt-2 left-27 text-xs text-secondary active:opacity-60"
+                    >
+                    
+                    <img src="https://img.icons8.com/?size=20&id=79026&format=png&color=ffffff" />
+
                 </button>
 
             <div className="flex justify-center mt-2 gap-1">
@@ -35,10 +53,9 @@ export default function BookCard({ title, price, author, description, images }) 
         </div>
 
         <div className="flex flex-col mt-5 items-center gap-2 text-center w-full max-w-sm">
-            <label htmlFor="price" className="font-bold text-lg">Valor:</label>
-            <p name="price" className="border border-[#3498db] px-5 py-2 font-medium rounded-md w-50">{price}</p>
-            <label htmlFor="description" className="font-bold text-lg mt-5">Descrição:</label>
-            <p name="description" className="border border-[#3498db] text-sm font-light px-3 py-5 h-fit rounded-md w-fit">{description}</p>
+            <p name="price" className="border-2 border-[#3498db] px-5 py-2 font-medium text-lg rounded-md w-50">{price}</p>
+            <label htmlFor="description" className="font-bold text-lg mt-1">Descrição:</label>
+            <p name="description" className="border-2 border-[#3498db] text-[13px] font-light px-3 py-5 h-fit rounded-md w-fit max-w-3/4">{description}</p>
         </div>
     </div>
     )
