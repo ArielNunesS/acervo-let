@@ -4,16 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
+.fira-sans-regular {
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 :root {
-  --background: #66789f;
+  --background: #36454F;
+  --background-light: #4c6270;
   --card: #1a1a1d;
   --border: #3c3c3c;
   --primary: #3498db;
   --text: #f0f0f0;
+  --contrast: #64B5F6;
   --secondary: #aaaaaa;
 }
 
 
 body {
+  font-family: "Fira Sans", 'Times New Roman', serif;
+  color: #f0f0f0;
   background: var(--background)
 }
